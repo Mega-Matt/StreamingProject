@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title></title>
+    <style></style>
+</head>
+<body>
+    <button id="start-camera">Start Camera</button>
+    <button id="stop-camera">Stop Camera</button>
+    <video id="video" width="320" height="240" autoplay></video>
+    <button id="start-record">Start Recording</button>
+    <button id="stop-record">Stop Recording</button>
+    <form method="post" action="{% url 'post' %}">{% csrf_token %}
+        <input id="post_file" type="file">
+        <input type="submit">
+    </form>
+    <script src="{% static 'js/camera.js'%}"></script>
+</body>
+</html>
